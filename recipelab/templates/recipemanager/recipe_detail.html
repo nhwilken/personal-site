@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+	<!-- TITLE ROW -->
+  <div class="row-centered">
+    <div class="col-xs-12">
+        <h1>{{ recipe.recipe_name }}</h1>
+        <div id="ref_data">
+            <span id="version_id">{{ current_version.id }}</span>
+        </div>
+    </div>
+  </div>
+
+{#      EDIT BUTTON ROW#}
+    <div class="row" id="edit-btn-row">
+        <div class="col-xs-12" id="edit-btn-col">
+
+          <div class="btn-group" id="edit-btn-group">
+              <div class="btn btn-primary edit-hidden" id="edit-new-version">New Version</div>
+              <div class="btn btn-primary edit-hidden" id="edit-new-recipe">New Recipe</div>
+              <div class="btn btn-primary edit-hidden" id="edit-save" >Save</div>
+              <div class="btn btn-primary" id="edit-toggle">
+                  <span class="glyphicon glyphicon-pencil" id="edit-icon"></span>
+              </div>
+          </div>
+        <div class="favorite">
+            <span class="glyphicon glyphicon-star-empty"></span>
+        </div>
+    </div>
+
+{#      RECIPE ITEMS METHOD ROW#}
+    <div class="row">
+        <main class="col-xs-12 col-md-8 col-lg-8" id="recipe-display">
+            {% include "recipemanager/recipe_display.html" %}
+        </main>
+        <div class="col-md-4">
+            <h4>HISTORY</h4>
+            <ul id="version-history">
+            {%  for version in versions %}
+                <li
+                    {% if version.id == current_version.id %}
+                        class="history-item active-version"
+                    {% else %}
+                        class="history-item"
+                    {% endif %}
+                    id="hist-v-{{ version.id }}">{{ version.version_num }}: {{ version.date_created }}-ID: {{ version.id }}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+{#    <hr>#}
+
+</div>
+{% endblock %}
+
+
+{% block local_scripts %}
+    <script src="{% static 'recipemanager/scripts/recipe_detail.js' %}"></script>
+    <script src="{% static 'recipemanager/scripts/post_auth.js' %}"></script>
+{% endblock %}

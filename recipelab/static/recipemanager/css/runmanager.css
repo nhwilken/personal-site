@@ -1,0 +1,100 @@
+#edit-btn-group {
+    float: right;
+}
+.favorite {
+    float: right;
+    font-size: 24pt;
+}
+.active-version {
+    background-color: lightblue;
+}
+.history-item:hover {
+    background-color: lightcoral;
+}
+#ref_data {
+    display: none;
+}
+.start-hidden{
+    display: none;
+}
+.edit-hidden {
+    display: none;
+}
+
+.recipe-method-section ul li {
+    border-bottom: 2px solid #f3f2f0;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.method-step-number{
+    width: 50px;
+    line-height: 26px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Cabin,"Open Sans",Arial,sans-serif;
+    /*margin-bottom: 10px;*/
+    display: block;
+    float: left;
+}
+
+.method-step-content{
+    line-height: 26px;
+    width: auto;
+    overflow: hidden;
+    display: block;
+}
+
+.list-group {
+    list-style: decimal inside;
+}
+
+.list-group-item {
+    display: list-item;
+    text-align: left;
+}
+
+.list-group-item textarea {
+    resize: none;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.unit-selector select {
+    width: 100px;
+    background-color: blue;
+}
+
+.versionbox {
+	/*outline: 3px solid black;*/
+    padding: 10px;
+    margin: 5px;
+}
+
+.edit_items {
+	transition: 0.3s;
+	text-align: center;
+	line-height: 30px; /*used to vertically center text */
+	width: 50px;
+	border: 1px solid black;
+	border-radius: 5px;
+	float:right;
+	margin-right:60px
+}
+
+.edit_items:hover {
+	background-color: gray;
+}
